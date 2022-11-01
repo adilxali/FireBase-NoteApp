@@ -31,7 +31,7 @@ const updateTask = ()=>{
         } else if (result.isDenied) {
             newTitle.value = '';
             newDescription.value = '';
-          useToast('Changes are not saved', '', 'info')
+          useToast('info', 'Changes are not saved')
         }
       })
 }
