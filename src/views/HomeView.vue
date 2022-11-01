@@ -44,7 +44,6 @@ onMounted(() => {
   getitem();
 });
 
-
 </script>
 <template>
   <div class="container">

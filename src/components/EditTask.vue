@@ -9,6 +9,7 @@ const newTitle = ref('');
 const newDescription = ref('');
 const route = useRoute();
 const router = useRouter();
+const id = route.params.id;
 const updateTask = ()=>{
     Swal.fire({
         title: 'Do you want to save the changes?',
@@ -18,7 +19,7 @@ const updateTask = ()=>{
         denyButtonText: `Don't save`,
       }).then((result) => {
         if (result.isConfirmed) {
-            updateDoc(doc(db, 'user', route.params.id), {
+            updateDoc(doc(db, 'user',id), {
                 title: newTitle.value,
                 description: newDescription.value,
                 date: new Date().toLocaleString()
@@ -38,7 +39,7 @@ const updateTask = ()=>{
 <template>
     <div class="container">
       <h1 class="display-2 text-center">Edit Task</h1>
-      <div class="form mx-auto" style="max-width: 50%">
+      <div class="form mx-auto" style="max-width: 80%">
         <form action="" @submit.prevent="updateTask">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
@@ -65,7 +66,7 @@ const updateTask = ()=>{
           <button type="submit" class="btn btn-success float-end px-5" :disabled="!newTitle.length && !newDescription.length">
             &check; Update
           </button>
-          <router-link to="/"><button type="button" class="btn btn-danger float-end px-5 mx-2">
+          <router-link :to="{ name: 'detail', params: { id: id}}"><button type="button" class="btn btn-danger float-end px-5 mx-2">
             &cross; Cancel
           </button></router-link>
         </form>

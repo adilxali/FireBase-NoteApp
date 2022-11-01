@@ -31,6 +31,16 @@ const router = createRouter({
       path:"/edit/:id",
       name:"edit",
       component: ()=> import ('@/components/EditTask.vue')
+    },
+    {
+      path:"/login",
+      name:"login",
+      component: ()=> import ('@/components/Login.vue')
+    },
+    {
+      path:"/register",
+      name:"register",
+      component : ()=> import('../components/Signup.vue')
     }
   ]
 })

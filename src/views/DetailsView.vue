@@ -21,21 +21,37 @@ const taskDone = (id) => {
   updateDoc(doc(taskCollectionRef, id), {
     done: !task.done,
   });
-  console.log(task.value.done)
+  console.log(task.value.done);
 };
 onMounted(() => {
   getitem();
 });
 </script>
 <template>
-  <div class="card w-50 mx-auto mt-3">
-  <div class="card-body">
-    <h5 class="card-title display-4 text-uppercase fs-3 text-decoration-underline text-center"> {{task.title}}</h5>
-    <p class="card-text display-6 text-start"><span class="h2">Description:</span> <br/>{{task.description}}</p>
-    <div class="d-flex justify-content-end m-2">
-      <router-link :to="{ name: 'edit' , params: { id: taskid}}" ><button class="btn btn-primary">Edit</button></router-link>
-      <button class="btn btn-success mx-2" @click="taskDone(taskid)">&check;</button>
-    </div>    
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card w-50 mx-auto mt-3">
+          <div class="card-body">
+            <h5
+              class="card-title display-4 text-uppercase fs-3 text-decoration-underline text-center"
+            >
+              {{ task.title }}
+            </h5>
+            <p class="card-text display-6 text-start">
+              <span class="h2">Description:</span> <br />{{ task.description }}
+            </p>
+          </div>
+          <div class="d-flex justify-content-end m-2">
+            <router-link :to="{ name: 'edit', params: { id: taskid } }"
+              ><button class="btn btn-primary">Edit</button></router-link
+            >
+            <button class="btn btn-success mx-2" @click="taskDone(taskid)">
+              &check;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </template>

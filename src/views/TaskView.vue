@@ -43,17 +43,24 @@ const deleteTask = (id)=>{
           <div v-if="!task.length">
             <h1 class="display-1">No Task Availaible</h1>
           </div>
-          <div v-else v-for="todo in task" class="col-3">
+          <div v-else v-for="todo in task" class="col-sm-12 col-md-4 col-lg-3">
             <div class="card m-1" style="max-width: 18rem">
               <div class="card-body" :class="{'complete': done}">
                 <h5 class="card-title">{{ todo.title }}</h5>
                 <p class="card-text">
                   {{ todo.date }}
                 </p>
-                <div class="col-12 d-flex justify-content-around">
+                <h5 v-if="!todo.done" class="text-danger">
+                task  Panding....
+                </h5>
+                <h4 v-else class="text-success ">
+                  Task Completed
+                </h4>
+                <div class="d-flex justify-content-between" style="max-width: 16rem;">
                   <router-link :to="{ name: 'detail' , params: { id: todo.id}}" ><button class="btn btn-primary">View</button></router-link>
-                  <button class="btn btn-success mx-2" @click="taskDone(todo.id)">&check;Done</button>
                   <button class="btn btn-danger" @click="deleteTask(todo.id)">&cross;Del</button>
+                  <button v-if="!todo.done" class="btn btn-success mx-2" @click="taskDone(todo.id)">&check;Done</button>
+                  <button v-else class="btn btn-outline-secondary mx-2" @click="taskDone(todo.id)">Not Done</button>
                 </div>
               </div>
             </div>
