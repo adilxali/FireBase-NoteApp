@@ -15,6 +15,9 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ```sh
 npm install
 ```
+```sh
+npm install sweetalert2
+```
 
 ### Compile and Hot-Reload for Development
 
@@ -27,3 +30,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+You can find me on [![Twitter][1.2]][1], or on [![LinkedIn][3.2]][3].
+
+[2.2]: https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/linkedin-3-16.png (LinkedIn icon without padding)
+
+
+[2]: https://www.linkedin.com/in/adilxali/

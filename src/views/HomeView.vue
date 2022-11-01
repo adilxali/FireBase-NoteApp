@@ -48,7 +48,7 @@ onMounted(() => {
 <template>
   <div class="container">
     <div class="row flex-row">
-      <div class="col-sm-12 d-flex flex-wrap">
+      <div class="col-sm-12 d-flex justify-content-center flex-wrap">
         <div v-if="!task.length">
             <h1 class="display-1">No Task Availaible</h1>
           </div>
