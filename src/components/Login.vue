@@ -10,7 +10,8 @@ const login = async () => {
   } catch (err) {
     console.log(err.message);
   }
-};
+  
+};  
 </script>
 <template>
   <div>

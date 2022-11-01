@@ -52,7 +52,7 @@ onMounted(() => {
         <div v-if="!task.length">
             <h1 class="display-1">No Task Availaible</h1>
           </div>
-        <div v-else v-for="todo in task" class="col-3">
+        <div v-else v-for="todo in task" class="col-sm-12 col-md-4 col-lg-3">
           <div class="card m-1" style="max-width: 18rem">
             <div class="card-body">
               <h5 class="card-title">{{ todo.title }}</h5>
