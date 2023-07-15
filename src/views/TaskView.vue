@@ -1,7 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { db } from "../firebase/index.js"
-import { collection,deleteDoc,doc, onSnapshot, updateDoc } from '@firebase/firestore';import { async } from '@firebase/util';
+import { collection,deleteDoc,doc, onSnapshot, updateDoc } from '@firebase/firestore';
+import { async } from '@firebase/util';
 import { useToast } from '../composables/Toast.js';
 const  task = ref([]);
 const taskCollectionRef = collection(db, 'user');
@@ -22,7 +23,7 @@ const getTask =  ()=>{
 }
 onMounted(()=>{
     getTask();
-    console.log(task)
+    console.log("task")
 })
 const taskDone = (id) => {
   const index = task.value.findIndex((todo) => todo.id === id);

@@ -24,7 +24,7 @@ const addTodo = async () => {
 };
 </script>
 <template>
-  <div class="container">
+  <div class="container h-100 mh-100">
     <div class="row">
       <div class="col">
         <h1 class="display-2 text-center">Add Task</h1>

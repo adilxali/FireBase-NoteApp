@@ -42,6 +42,7 @@ onMounted(() => {
   // });
   // todos.value = fbTodos;
   getitem();
+  console.log("hello")
 });
 
 </script>
